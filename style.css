@@ -5,7 +5,7 @@
 }
 @font-face {
     font-family: Glimer;
-    src: url("Glimer/Gilmer\ Heavy.otf") format("opentype");
+    src: url("./Glimer/Gilmer\ Heavy.otf") format("opentype");
 }
 body{
     display: flex;
