@@ -3,12 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: Glimer;
+    src: url("Glimer/Gilmer\ Heavy.otf") format("opentype");
+}
 body{
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background-color: #000;
+    font-family: Glimer;
 }
 .main-container{
     width: 100%;
