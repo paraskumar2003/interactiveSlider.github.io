@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+.main-container{
+    width: 100%;
+    max-width:350px;
+}
+.card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 2px solid rgba(110,80,220,0.6);
+    padding: 1rem;
+}
+.card h1{
+    text-align: center;
+    font-size: 40px;
+    padding:8px 2rem 1rem;
+}
+.card .sliders-container{
+    width:100%;
+}
+.card .slider-container{
+    padding-bottom: 20px;
+}
+.card .sliders-container p{
+    font-size: 12px;
+    color: #838383;
+    padding-bottom: 10px;
+}
+.card .sliders-container h2{
+    font-size: 28px;
+}
+.card .slider-container .slider{
+    width: 100%;
+    position: relative;
+}
+.card .slider-container .slider input{
+    width: 100%;
+    appearance: none;
+    height: 0.3125rem;
+    background: rgb(181, 181, 181);
+    outline: none;
+    opacity: 1;
+    border-radius: 0.25rem;
+    transition: opacity 0.2s ease 0s;
+    -webkit-tap-highlight-color: transparent;
+}
+.card .slider-container .slider input::-moz-range-progress{
+    background: linear-gradient(-90deg, rgb(209, 207, 234), rgb(136, 127, 238)); 
+}
+.card .slider-container .slider div.gradient{
+    content: "";
+    top: 0.5875rem;
+    left: 0px;
+    z-index: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    width: 61.25%;
+    height: 0.275rem;
+    background: linear-gradient(-90deg, rgb(209, 207, 234), rgb(136, 127, 238));
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 4px;
+    background: #ffffff;
+    cursor: ew-resize;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+}
+
+div.gradient{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.result-container{
+    padding-bottom:20px;
+}
+.result-container h1{
+    color: #91E384;
+}
+.result-container p{
+    font-size: 22px;
+}
+.card .btn-join{
+    padding: 8px 16px;
+    border-radius: 80px;
+    font-size: 12px;
+    font-weight: 700;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Slider</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="card">
+            <h1>Make money from day one</h1>
+            <div class="sliders-container">
+                <div class="slider-container">
+                    <p>Monthly average traction on your product</p>
+                    <h2 class="listens">1000 listens</h2>
+                    <div class="slider">
+                        <input type="range" id="1" min="10" max="100" step="0.25" value="67">
+                        <div class="gradient">
+                            <div class="btn-peek"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-container">
+                    <p>Average duration of your podcast</p>
+                    <h2 class="duration">8.5 minutes</h2>
+                    <div class="slider">
+                        <input type="range" id="2" min="10" max="100" step="0.25" value="67">
+                        <div class="gradient">
+                            <div class="btn-peek"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result-container">
+              <h1 class="result">$3,712</h1>
+              <p>per month on an average</p>  
+            </div>
+            <button class="btn-join">
+                Join Juspod Now
+            </button>
+        </div>
+    </div>
+    <script>
+        let range = document.querySelectorAll('.slider input');
+        let filledRange = document.querySelectorAll('.slider .gradient');
+        let listens = document.querySelector('.listens');
+        let duration = document.querySelector('.duration');
+        let result = document.querySelector('.result');
+
+        
+
+
+
+        range.forEach((e)=>{
+
+            e.oninput = function(){
+            let value = e.value;
+            let id = e.id;
+
+            filledRange[id-1].style.width = `${value-6}%`;
+            console.log(id);
+            if(id == 1){
+                listens.textContent = `${100 * value} listens`;
+            }else if(id == 2){
+                duration.textContent = `${0.5 * value} minutes`;
+            }
+
+            let listenC =  listens.textContent.split(" ")[0]; 
+            let durationsC = duration.textContent.split(" ")[0]; 
+            let resultC = result.textContent; 
+
+            let evaluation = ((durationsC*20)*(listenC * 1.2))/1000;
+            
+            result.textContent = `$${evaluation}`;
+
+
+            
+            
+        }
+        })
+       
+
+    </script>
+</body>
+</html>
