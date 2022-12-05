@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+* >*{
+    transition: 0.2s all ease;
+}
 @font-face {
     font-family: Glimer;
     src: url("./Glimer/Gilmer\ Heavy.otf") format("opentype");
@@ -32,7 +35,7 @@ body{
 .card h1{
     text-align: center;
     font-size: 40px;
-    padding:8px 2rem 1rem;
+    padding:8px 1rem 1rem;
 }
 .card .sliders-container{
     width:100%;
@@ -98,6 +101,7 @@ div.gradient{
 }
 .result-container{
     padding-bottom:20px;
+    width: 100%;
 }
 .result-container h1{
     color: #91E384;
@@ -111,4 +115,37 @@ div.gradient{
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+}
+.analytics-container{
+    width: 100%;
+    padding:1rem 0;
+}
+.analytics-container .client{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 6px 0;
+
+}
+.analytics-container .client .growth {
+    height: 10px;
+    border-radius:3px;
+    width: 100px;
+    max-width: 64%;
+    background-color: #fff;
+}
+.main{
+    background-color: #91E384 !important;
+}
+.main-color{
+    color: #91E384 !important;
+}
+.client img, .client .growth{
+    margin-right:5px;
+}
+.analytics-container .client img{
+    width: 18px;
+}
+.analytics-container .client p{
+    font-size: 14px;
 }

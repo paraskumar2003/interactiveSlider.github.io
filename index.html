@@ -34,8 +34,26 @@
                 </div>
             </div>
             <div class="result-container">
-              <h1 class="result">$3,712</h1>
-              <p>per month on an average</p>  
+              <h1 class="result">~$3,000 p.m.</h1>
+              <div>
+                <div class="analytics-container">
+                    <div class="client">
+                        <img src="./Assets/JP.png" alt="">
+                        <div class="growth main" id="graph1"></div>
+                        <p class="main-color" id="client1">~$2000 p.m.</p>
+                    </div>
+                    <div class="client">
+                        <img src="./Assets/1.png" alt="" >
+                        <div class="growth " id="graph2"></div>
+                        <p id="client1">~$1400 p.m.</p>
+                    </div>
+                    <div class="client">
+                        <img src="./Assets/2.png" alt="">
+                        <div class="growth " id="graph3"></div>
+                        <p id="client1">~$800 p.m.</p>
+                    </div>
+                </div>
+              </div>
             </div>
             <button class="btn-join">
                 Join Juspod Now
@@ -48,6 +66,13 @@
         let listens = document.querySelector('.listens');
         let duration = document.querySelector('.duration');
         let result = document.querySelector('.result');
+        let firstClient = document.getElementById('client1');
+        let firstGraph = document.getElementById('graph1');
+        let secondClient = document.getElementById('client2');
+        let secondGraph = document.getElementById('graph2');
+        let thirdClient = document.getElementById('client3');
+        let thirdGraph = document.getElementById('graph3');
+
 
         
 
@@ -60,7 +85,7 @@
             let id = e.id;
 
             filledRange[id-1].style.width = `${value-6}%`;
-            console.log(id);
+
             if(id == 1){
                 listens.textContent = `${100 * value} listens`;
             }else if(id == 2){
@@ -71,9 +96,19 @@
             let durationsC = duration.textContent.split(" ")[0]; 
             let resultC = result.textContent; 
 
+
             let evaluation = ((durationsC*20)*(listenC * 1.2))/1000;
-            
-            result.textContent = `$${evaluation}`;
+            let number = Math.round(evaluation / 1000) * 1000; 
+            result.textContent = `~$${number} p.m.`;
+
+
+            let percentage = (evaluation * 100)/12000;
+            firstGraph.style.width = `${percentage}%`;
+
+            secondGraph.style.width = `${((percentage*70)/100)}%`;
+            thirdGraph.style.width = `${((percentage*35)/100)}%`;
+
+    
 
 
             
